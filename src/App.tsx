@@ -6,7 +6,6 @@ import { useSpotify } from './hooks/useSpotify';
 import { useAppStore } from './store';
 
 
-import CustomCursor from './components/CustomCursor';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import Callback from './components/Callback';
@@ -64,7 +63,6 @@ function App() {
     <div className="min-h-screen text-gray-900 transition-colors duration-300 bg-white dark:bg-slate-900 dark:text-white">
       {/* Custom Cursor (only on non-touch devices) */}
       <div className="hidden md:block">
-        <CustomCursor />
       </div>
 
       <BrowserRouter>

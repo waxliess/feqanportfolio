@@ -195,7 +195,7 @@ const Hero: React.FC = () => {
                     Server Booster
                   </span>
                   <span className="px-2 py-1 text-xs font-medium text-green-600 bg-green-100 rounded-md dark:bg-green-900/30 dark:text-green-400">
-                    discord.gg/vsc üyesi
+                     
                   </span>
                 </div>
 
@@ -258,7 +258,7 @@ const Hero: React.FC = () => {
                       @By
                     </span>
                     <span className="px-2 py-1 text-xs font-medium rounded-md" style={{ backgroundColor: 'rgba(87, 242, 135, 0.2)', color: 'rgb(87, 242, 135)' }}>
-                      @Oxy
+                      @Feq4n
                     </span>
                   </div>
                 </div>
@@ -290,7 +290,7 @@ const Hero: React.FC = () => {
                       <span className="text-sm font-medium">Twitter</span>
                     </motion.a>
                     <motion.a
-                      href="https://instagram.com/hs.kalite"
+                      href="https://instagram.com/feqan_gerayl1"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-2 px-3 py-2 text-gray-700 transition-colors bg-gray-100 rounded-md dark:bg-slate-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-slate-600"

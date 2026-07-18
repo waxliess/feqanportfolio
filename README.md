@@ -4,10 +4,10 @@
 
 
 
-# OxyPortfolio
+# FeqanPortfolio
 
 
-Demo:https://oxyportfolio.vercel.app/
+Demo:https://Feqanportfolio.vercel.app/
 
 
 React, TypeScript ve Tailwind CSS ile geliştirilmiş şık bir kişisel portföy sitesi. Discord profilinizi, anlık Spotify şarkı bilgilerinizi ve daha fazlasını gösterir. Lanyard ile gerçek zamanlı Discord durumu ve Spotify API ile müzik çalma entegrasyonu içerir.
@@ -29,8 +29,8 @@ React, TypeScript ve Tailwind CSS ile geliştirilmiş şık bir kişisel portfö
 
 1. **Repoyu Klonlayın**:
    ```bash
-   git clone https://github.com/hasbutcu/oxyportfolio.git
-   cd oxyportfolio
+   git clone https://github.com/feq4n/Feqanportfolio.git
+   cd Feqanportfolio
    ```
 
 2. **Bağımlılıkları Kurun**:
@@ -189,7 +189,7 @@ Projenizi Vercel’e yükleyerek herkesin erişebileceği bir site haline getire
 3. **Vercel’de Yeni Proje Oluşturun**:
    - Vercel Dashboard’a gidin (`https://vercel.com/dashboard`).
    - “New Project” butonuna tıklayın.
-   - GitHub reposunu seçin (ör. `kullanici-adiniz/oxyportfolio`).
+   - GitHub reposunu seçin (ör. `kullanici-adiniz/Feqanportfolio`).
    - “Import”’a tıklayın.
 
 4. **Çevre Değişkenlerini Ekleyin**:
@@ -205,7 +205,7 @@ Projenizi Vercel’e yükleyerek herkesin erişebileceği bir site haline getire
 
 5. **Projeyi Deploy Edin**:
    - “Deploy” butonuna tıklayın.
-   - Vercel, projeyi otomatik olarak build eder ve bir URL verir (ör. `https://oxyportfolio.vercel.app`).
+   - Vercel, projeyi otomatik olarak build eder ve bir URL verir (ör. `https://Feqanportfolio.vercel.app`).
    - Deploy tamamlandığında URL’ye gidin, sitenizin çalıştığını kontrol edin.
 
 ## Katkıda Bulunma

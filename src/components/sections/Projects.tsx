@@ -11,8 +11,8 @@ const projects: Project[] = [
     description: 'Ürün listeleri, alışveriş sepeti ve ödeme işlevselliği ile tam özellikli bir e-ticaret platformu.',
     tags: ['React', 'Node.js', 'MongoDB', 'Express'],
     image: 'https://images.pexels.com/photos/6214476/pexels-photo-6214476.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    github: 'https://github.com/hasbutcu',
-    link: 'https://oxyinc.xyz'
+    github: 'https://github.com/feq4n',
+    link: 'https://feqan.dev'
   },
   {
     id: 2,
@@ -20,8 +20,8 @@ const projects: Project[] = [
     description: 'Gerçek zamanlı güncellemelerle görevleri, projeleri ve ekip işbirliğini yönetmek için bir üretkenlik uygulaması.',
     tags: ['React', 'TypeScript', 'Firebase', 'Tailwind'],
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyicNHJ0GT4efJIGeevQktZ18L_Q0FzRlesg&s',
-    github: 'https://github.com/hasbutcu',
-    link: 'https://oxyinc.xyz'
+    github: 'https://github.com/feq4n',
+    link: 'https://feqan.dev'
   },
   {
     id: 3,
@@ -29,8 +29,8 @@ const projects: Project[] = [
     description: 'Dünya çapındaki konumlar için mevcut koşulları ve tahminleri sağlayan etkileşimli bir hava durumu panosu.',
     tags: ['JavaScript', 'API Integration', 'CSS'],
     image: 'https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    github: 'https://github.com/hasbutcu',
-    link: 'https://oxyinc.xyz'
+    github: 'https://github.com/feq4n',
+    link: 'https://feqan.dev'
   },
   {
     id: 4,
@@ -38,8 +38,8 @@ const projects: Project[] = [
     description: 'Kullanıcı profilleri, gönderiler, yorumlar ve gerçek zamanlı mesajlaşma ile bir sosyal ağ platformu.',
     tags: ['React', 'Next.js', 'PostgreSQL', 'WebSockets'],
     image: 'https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    github: 'https://github.com/hasbutcu',
-    link: 'https://oxyinc.xyz'
+    github: 'https://github.com/feq4n',
+    link: 'https://feqan.dev'
   },
   {
     id: 5,
@@ -47,8 +47,8 @@ const projects: Project[] = [
     description: 'Antrenmanları, ilerlemeyi ve sağlık metriklerini veri görselleştirme ile takip etmek için bir uygulama.',
     tags: ['React Native', 'TypeScript', 'GraphQL'],
     image: 'https://images.pexels.com/photos/3622517/pexels-photo-3622517.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    github: 'https://github.com/hasbutcu',
-    link: 'https://oxyinc.xyz'
+    github: 'https://github.com/feq4n',
+    link: 'https://feqan.dev'
   },
   {
     id: 6,
@@ -56,8 +56,8 @@ const projects: Project[] = [
     description: 'İncelemeler, derecelendirmeler ve önerilerle filmler ve TV şovları için kapsamlı bir veritabanı.',
     tags: ['React', 'Redux', 'API Integration'],
     image: 'https://images.pexels.com/photos/918281/pexels-photo-918281.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    github: 'https://github.com/hasbutcu',
-    link: 'https://oxyinc.xyz'
+    github: 'https://github.com/feq4n',
+    link: 'https://feqan.dev'
   }
 ];
 

@@ -112,7 +112,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="text-base font-medium text-gray-900 dark:text-white">Email</h4>
-                    <p className="text-gray-600 dark:text-gray-400">contact@example.com</p>
+                    <p className="text-gray-600 dark:text-gray-400">contact@feqan.dev</p>
                   </div>
                 </div>
                 
@@ -122,7 +122,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="text-base font-medium text-gray-900 dark:text-white">Telefon</h4>
-                    <p className="text-gray-600 dark:text-gray-400">+90 (542) 311 69 62</p>
+                    <p className="text-gray-600 dark:text-gray-400">+994 (077) 527 13 18</p>
                   </div>
                 </div>
                 
@@ -132,7 +132,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="text-base font-medium text-gray-900 dark:text-white">Adres</h4>
-                    <p className="text-gray-600 dark:text-gray-400">Ankara</p>
+                    <p className="text-gray-600 dark:text-gray-400">Bakı</p>
                   </div>
                 </div>
               </div>
@@ -144,7 +144,7 @@ const Contact: React.FC = () => {
               
               <div className="flex space-x-4">
                 <motion.a 
-                  href="https://github.com/hasbutcu" 
+                  href="https://github.com/feq4n" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="p-3 text-gray-700 transition-colors bg-gray-100 rounded-full dark:bg-slate-800 dark:text-gray-300 hover:bg-blue-100 dark:hover:bg-blue-900/30 hover:text-blue-600 dark:hover:text-blue-400"
@@ -156,7 +156,7 @@ const Contact: React.FC = () => {
                 </motion.a>
                 
                 <motion.a 
-                  href="https://twitter.com/realyryoxi" 
+                  href="https://twitter.com/feq4n" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="p-3 text-gray-700 transition-colors bg-gray-100 rounded-full dark:bg-slate-800 dark:text-gray-300 hover:bg-blue-100 dark:hover:bg-blue-900/30 hover:text-blue-600 dark:hover:text-blue-400"
@@ -168,7 +168,7 @@ const Contact: React.FC = () => {
                 </motion.a>
                 
                 <motion.a 
-                  href="https://instagram.com/hasbutcu" 
+                  href="https://instagram.com/feqan_gerayl1" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="p-3 text-gray-700 transition-colors bg-gray-100 rounded-full dark:bg-slate-800 dark:text-gray-300 hover:bg-blue-100 dark:hover:bg-blue-900/30 hover:text-blue-600 dark:hover:text-blue-400"
@@ -181,18 +181,19 @@ const Contact: React.FC = () => {
               </div>
             </div>
             
-            {/* Map or Illustration */}
-            <div className="relative h-64 overflow-hidden rounded-lg">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d195884.30043145744!2d32.59795774239392!3d39.90352329781131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d347d520732db1%3A0xbdc57b0c0842b8d!2sAnkara!5e0!3m2!1str!2str!4v1745762360239!5m2!1str!2str" 
-                width="100%" 
-                height="100%" 
-                style={{ border: 0 }} 
-                allowFullScreen 
-                loading="lazy"
-                className="grayscale"
-              ></iframe>
-            </div>
+{/* Map or Illustration */}
+<div className="relative h-64 overflow-hidden rounded-lg">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3038.5845985069845!2d49.86524017586665!3d40.3958983714429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40307d40a035a6bd%3A0xa8c2cbf267a83fbd!2zSGV5ZMmZciDGj2xpeWV2IE3JmXJryZl6aQ!5e0!3m2!1saz!2str!4v1784394250113!5m2!1saz!2str"
+    width="100%"
+    height="100%"
+    style={{ border: 0 }}
+    allowFullScreen
+    loading="lazy"
+    referrerPolicy="strict-origin-when-cross-origin"
+    className="grayscale"
+  ></iframe>
+</div>
           </motion.div>
           
  
