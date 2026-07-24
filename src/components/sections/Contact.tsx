@@ -2,6 +2,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Phone, Send, Github, Instagram, Twitter, Linkedin } from 'lucide-react';
 import { useAppStore } from '../../store';
+import DiscordWidget from '../DiscordWidget';
+
+const DISCORD_SERVER_ID = '1349687249121312879';
 
 const Contact: React.FC = () => {
   const setActiveSection = useAppStore((state) => state.setActiveSection);
@@ -195,8 +198,12 @@ const Contact: React.FC = () => {
   ></iframe>
 </div>
           </motion.div>
-          
- 
+
+          {/* Discord Widget */}
+          <div className="flex flex-col justify-start">
+            <h3 className="mb-6 text-xl font-semibold text-gray-900 dark:text-white">Discord'da Bul</h3>
+            <DiscordWidget serverId={DISCORD_SERVER_ID} />
+          </div>
         </div>
       </div>
     </section>

@@ -71,3 +71,57 @@ img {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+/* README içeriği (ProjectCard içinde dinamik olarak enjekte edilir) */
+.readme-content h1,
+.readme-content h2,
+.readme-content h3,
+.readme-content h4 {
+  @apply font-semibold text-gray-900 dark:text-white mt-4 mb-2;
+}
+
+.readme-content h1 { @apply text-lg; }
+.readme-content h2 { @apply text-base; }
+.readme-content h3,
+.readme-content h4 { @apply text-sm; }
+
+.readme-content p {
+  @apply mb-3 leading-relaxed;
+}
+
+.readme-content ul {
+  @apply mb-3 ml-5 space-y-1 list-disc;
+}
+
+.readme-content a {
+  @apply text-blue-600 dark:text-blue-400 hover:underline;
+}
+
+.readme-content code {
+  @apply px-1.5 py-0.5 rounded bg-gray-100 dark:bg-slate-900 text-xs font-mono text-pink-600 dark:text-pink-400;
+}
+
+.readme-content pre {
+  @apply p-3 mb-3 overflow-x-auto text-xs rounded-lg bg-gray-100 dark:bg-slate-900;
+}
+
+.readme-content pre code {
+  @apply bg-transparent p-0 text-gray-800 dark:text-gray-200;
+}
+
+.readme-content img {
+  @apply my-3 rounded-lg max-h-64;
+}
+
+.readme-content blockquote {
+  @apply pl-4 my-3 italic text-gray-500 border-l-4 border-gray-300 dark:border-slate-700 dark:text-gray-400;
+}
+
+.readme-content hr {
+  @apply my-4 border-gray-200 dark:border-slate-700;
+}
+
+/* Discord widget kartı */
+.discord-widget-frame {
+  color-scheme: dark;
+}
