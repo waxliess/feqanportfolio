@@ -69,17 +69,8 @@ const Projects: React.FC = () => {
           <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl dark:text-white">Projeler</h2>
           <div className="w-20 h-1 mx-auto mb-6 bg-blue-600 rounded-full" />
           <p className="text-lg text-gray-700 dark:text-gray-300">
-            GitHub'daki{' '}
-            <a
-              href={`https://github.com/${GITHUB_USERNAME}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-medium text-blue-600 dark:text-blue-400 hover:underline"
-              data-hover
-            >
-              @{GITHUB_USERNAME}
-            </a>{' '}
-            hesabımdan canlı olarak çekilen açık kaynak projelerim.
+          
+    
           </p>
         </motion.div>
 
