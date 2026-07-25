@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Music, ExternalLink } from 'lucide-react';
 import { useAppStore } from '../store';
+import { getRandomFallbackTrack } from '../data/fallbackTracks';
 
 interface SpotifyNowPlayingProps {
   className?: string;
@@ -12,6 +13,9 @@ const SpotifyNowPlaying: React.FC<SpotifyNowPlayingProps> = ({ className }) => {
   // bağlantısı üzerinden geliyor (App.tsx -> useLanyard -> store).
   const spotifyData = useAppStore((state) => state.spotifyData);
   const [now, setNow] = useState(Date.now());
+  // Bir şey çalmıyorken gösterilecek rastgele öneri; her mount'ta bir kere seçiliyor,
+  // sayfa her yenilendiğinde farklı bir şarkı çıksın diye re-render'da değişmiyor.
+  const [fallbackTrack] = useState(getRandomFallbackTrack);
 
   // İlerleme çubuğunu canlı tutmak için saniyede bir tick atıyoruz.
   useEffect(() => {
@@ -21,11 +25,45 @@ const SpotifyNowPlaying: React.FC<SpotifyNowPlayingProps> = ({ className }) => {
   }, [spotifyData.isPlaying]);
 
   if (!spotifyData.isPlaying || !spotifyData.songName) {
+    const searchUrl = `https://open.spotify.com/search/${encodeURIComponent(
+      `${fallbackTrack.songName} ${fallbackTrack.artistName}`
+    )}`;
+
     return (
-      <div className={`flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400 ${className}`}>
-        <Music size={16} className="text-gray-500" />
-        <span>Şu anda müzik çalmıyor</span>
-      </div>
+      <motion.div
+        className={`flex items-center space-x-3 ${className}`}
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
+      >
+        <div className="flex items-center justify-center w-12 h-12 bg-gray-100 rounded-md dark:bg-slate-700/40">
+          <Music size={20} className="text-gray-400" />
+        </div>
+        <div className="flex-1 min-w-0">
+          <p className="text-xs text-gray-400 dark:text-gray-500">Şu an bir şey çalmıyorum, önerim:</p>
+          <div className="flex items-center justify-between">
+            <a
+              href={searchUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium text-gray-800 truncate dark:text-gray-200 hover:underline"
+              title={fallbackTrack.songName}
+            >
+              {fallbackTrack.songName}
+            </a>
+            <a
+              href={searchUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-2 text-green-500 transition-colors hover:text-green-600 dark:hover:text-green-400"
+              aria-label="Spotify'da ara"
+            >
+              <ExternalLink size={14} />
+            </a>
+          </div>
+          <p className="text-xs text-gray-500 truncate dark:text-gray-400">{fallbackTrack.artistName}</p>
+        </div>
+      </motion.div>
     );
   }
 
