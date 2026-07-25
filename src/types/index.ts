@@ -45,13 +45,16 @@ export interface Activity {
 
 export interface SpotifyData {
   isPlaying: boolean;
+  trackId?: string;
   songName?: string;
   artistName?: string;
   albumName?: string;
   albumArt?: string;
   songUrl?: string;
-  progress_ms?: number;
-  duration_ms?: number;
+  /** Şarkının başladığı unix ms zaman damgası (ilerleme çubuğunu canlı hesaplamak için) */
+  startTimestamp?: number;
+  /** Şarkının biteceği unix ms zaman damgası */
+  endTimestamp?: number;
 }
 
 export interface Project {

@@ -1,32 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Music, ExternalLink } from 'lucide-react';
-import { useSpotify } from '../hooks/useSpotify';
+import { useAppStore } from '../store';
 
 interface SpotifyNowPlayingProps {
   className?: string;
 }
 
 const SpotifyNowPlaying: React.FC<SpotifyNowPlayingProps> = ({ className }) => {
-  const { spotifyData, loading, error } = useSpotify();
+  // Spotify verisi artık ayrı bir OAuth akışına gerek kalmadan, mevcut Discord/Lanyard
+  // bağlantısı üzerinden geliyor (App.tsx -> useLanyard -> store).
+  const spotifyData = useAppStore((state) => state.spotifyData);
+  const [now, setNow] = useState(Date.now());
 
-  if (loading) {
-    return (
-      <div className={`flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400 ${className}`}>
-        <Music size={16} className="text-green-500" />
-        <span>Spotify verileri yükleniyor...</span>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className={`flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400 ${className}`}>
-        <Music size={16} className="text-gray-500" />
-        <span>Spotify verileri alınamadı: {error}</span>
-      </div>
-    );
-  }
+  // İlerleme çubuğunu canlı tutmak için saniyede bir tick atıyoruz.
+  useEffect(() => {
+    if (!spotifyData.isPlaying) return;
+    const interval = setInterval(() => setNow(Date.now()), 1000);
+    return () => clearInterval(interval);
+  }, [spotifyData.isPlaying]);
 
   if (!spotifyData.isPlaying || !spotifyData.songName) {
     return (
@@ -37,10 +29,14 @@ const SpotifyNowPlaying: React.FC<SpotifyNowPlayingProps> = ({ className }) => {
     );
   }
 
+  const { startTimestamp, endTimestamp } = spotifyData;
+  const totalDuration =
+    startTimestamp && endTimestamp ? endTimestamp - startTimestamp : undefined;
+  const elapsed = startTimestamp ? Math.max(0, now - startTimestamp) : undefined;
   const progressPercentage =
-    spotifyData.progress_ms && spotifyData.duration_ms && spotifyData.duration_ms > 0
-      ? (spotifyData.progress_ms / spotifyData.duration_ms) * 100
-      : 0;
+    totalDuration && elapsed !== undefined
+      ? Math.min(100, (elapsed / totalDuration) * 100)
+      : undefined;
 
   return (
     <motion.div
@@ -88,7 +84,7 @@ const SpotifyNowPlaying: React.FC<SpotifyNowPlayingProps> = ({ className }) => {
         <p className="text-xs text-gray-500 truncate dark:text-gray-400" title={spotifyData.artistName}>
           {spotifyData.artistName}
         </p>
-        {typeof progressPercentage === 'number' && (
+        {progressPercentage !== undefined && (
           <div
             className="w-24 h-1 bg-gray-200 dark:bg-slate-600 rounded-full mt-1.5 overflow-hidden"
             role="progressbar"

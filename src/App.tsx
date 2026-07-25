@@ -4,7 +4,6 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useTheme } from './hooks/useTheme';
 import { useLanyard } from './hooks/useLanyard';
-import { useSpotify } from './hooks/useSpotify';
 import { useAppStore } from './store';
 
 
@@ -46,8 +45,7 @@ const MainPage: React.FC = () => {
 
 function App() {
   const { effectiveTheme } = useTheme();
-  const { discordUser } = useLanyard();
-  const { spotifyData } = useSpotify();
+  const { discordUser, spotifyData } = useLanyard();
   const setDiscordUser = useAppStore((state) => state.setDiscordUser);
   const setSpotifyData = useAppStore((state) => state.setSpotifyData);
 
