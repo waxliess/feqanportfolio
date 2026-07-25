@@ -29,12 +29,12 @@ export interface Badge {
 export interface Activity {
   name: string;
   type: number;
-  state?: string;
-  details?: string;
+  state?: string | null;
+  details?: string | null;
   timestamps?: {
     start?: number;
     end?: number;
-  };
+  } | null;
   assets?: {
     large_image?: string;
     large_text?: string;

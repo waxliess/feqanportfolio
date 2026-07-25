@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Github, Twitter, Instagram ,Linkedin, Mail, Code2, Sparkles, Briefcase, Music, Gamepad, Film, Activity } from 'lucide-react';
+import { Github, Twitter, Instagram, Mail, Code2, Sparkles, Briefcase, Gamepad, Film, Activity } from 'lucide-react';
 import { useAppStore } from '../../store';
-import DiscordStatus from '../DiscordStatus';
 import SpotifyNowPlaying from '../SpotifyNowPlaying';
 import { Activity as ActivityType } from '../../types';
+import StarsCanvas from '../canvas/StarsCanvas';
 
 const Hero: React.FC = () => {
   const setActiveSection = useAppStore((state) => state.setActiveSection);
@@ -86,8 +86,9 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="home" ref={containerRef} className="relative min-h-screen pt-20 pb-10 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-slate-900 dark:to-blue-950">
-      <div className="container px-4 mx-auto">
+    <section id="home" ref={containerRef} className="relative min-h-screen pt-20 pb-10 overflow-hidden bg-gradient-to-br from-gray-50 to-blue-50 dark:from-slate-900 dark:to-blue-950">
+      <StarsCanvas />
+      <div className="container relative z-10 px-4 mx-auto">
         <div className="flex flex-col items-start gap-8 lg:flex-row">
           {/* Left Side - Enhanced Discord Profile */}
           <motion.div
@@ -487,7 +488,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Tooltip styles */}
-      <style jsx global>{`
+      <style>{`
         .tooltip-container {
           position: relative;
         }

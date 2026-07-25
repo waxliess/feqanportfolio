@@ -4,8 +4,21 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+      colors: {
+        violet: {
+          DEFAULT: '#915EFF',
+        },
+        space: {
+          900: '#050816',
+          800: '#0b0a1f',
+          700: '#151030',
+          card: '#100d25',
+        },
+      },
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ['Oswald', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        mono: ['"Space Mono"', 'ui-monospace', 'SFMono-Regular', 'monospace'],
       },
       animation: {
         'spin-slow': 'spin 8s linear infinite',

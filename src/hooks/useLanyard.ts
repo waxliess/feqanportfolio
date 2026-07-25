@@ -1,7 +1,13 @@
 import { useState, useEffect } from "react";
-import { DiscordUser, Activity } from "../types";
+import { DiscordUser } from "../types";
 
 const DISCORD_ID = import.meta.env.VITE_discord_id;
+
+const DEFAULT_BADGES = [
+  { id: 'nitro' },
+  { id: 'active_developer' },
+  { id: 'verified_developer' },
+];
 
 export const useLanyard = () => {
   const [discordUser, setDiscordUser] = useState<DiscordUser | null>(null);
@@ -50,6 +56,7 @@ export const useLanyard = () => {
           const user = lanyardData.data.discord_user;
           setDiscordUser({
             username: user.username || "Bilinmeyen Kullanıcı",
+            discriminator: user.discriminator || "0",
             id: user.id,
             avatar: user.avatar || null,
             banner_url: bannerUrl, 
@@ -66,7 +73,7 @@ export const useLanyard = () => {
                 timestamps: activity.timestamps || null,
                 assets: activity.assets || null,
               })) || [],
-            badges: ['nitro', 'active_developer', 'verified_developer'], 
+            badges: DEFAULT_BADGES, 
           });
         } else {
           throw new Error("Lanyard API returned unsuccessful response");
@@ -83,7 +90,7 @@ export const useLanyard = () => {
 
     const ws = new WebSocket("wss://api.lanyard.rest/socket");
 
-    let heartbeatInterval: NodeJS.Timeout | null = null;
+    let heartbeatInterval: ReturnType<typeof setInterval> | null = null;
 
     ws.onopen = () => {
       console.log("WebSocket connected");
@@ -121,6 +128,7 @@ export const useLanyard = () => {
         const user = data.d.discord_user;
         setDiscordUser((prev) => ({
           username: user.username || prev?.username || "Bilinmeyen Kullanıcı",
+          discriminator: user.discriminator || prev?.discriminator || "0",
           id: user.id || prev?.id,
           avatar: user.avatar || prev?.avatar || null,
           banner_url: prev?.banner_url || null, 
@@ -136,7 +144,7 @@ export const useLanyard = () => {
               timestamps: activity.timestamps || null,
               assets: activity.assets || null,
             })) || [],
-          badges: prev?.badges || ['nitro', 'active_developer', 'verified_developer'],
+          badges: prev?.badges || DEFAULT_BADGES,
         }));
       }
     };

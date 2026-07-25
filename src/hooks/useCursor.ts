@@ -48,7 +48,7 @@ export const useCursor = () => {
     document.addEventListener('mousedown', handleMouseDown);
     document.addEventListener('mouseup', handleMouseUp);
     
-    const hoverElements = document.querySelectorAll('[data-hover]');
+    const hoverElements = document.querySelectorAll<HTMLElement>('[data-hover]');
     hoverElements.forEach(element => {
       element.addEventListener('mouseenter', handleMouseEnter);
       element.addEventListener('mouseleave', handleMouseLeave);

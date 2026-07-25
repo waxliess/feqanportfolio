@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useTheme } from './hooks/useTheme';
 import { useLanyard } from './hooks/useLanyard';
 import { useSpotify } from './hooks/useSpotify';
@@ -8,27 +10,36 @@ import { useAppStore } from './store';
 
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
-import Callback from './components/Callback';
+import CTAButtons from './components/CTAButtons';
+import ScrollToTop from './components/ScrollToTop';
+import Greeting from './components/Greeting';
 
 
 import Hero from './components/sections/Hero';
 import About from './components/sections/About';
 import Skills from './components/sections/Skills';
+import Experience from './components/sections/Experience';
 import Projects from './components/sections/Projects';
+import Feedbacks from './components/sections/Feedbacks';
 import Contact from './components/sections/Contact';
 
 const MainPage: React.FC = () => {
   return (
     <>
       <NavBar />
+      <Greeting />
       <main>
         <Hero />
         <About />
         <Skills />
+        <Experience />
         <Projects />
+        <Feedbacks />
         <Contact />
       </main>
       <Footer />
+      <CTAButtons />
+      <ScrollToTop />
     </>
   );
 };
@@ -70,6 +81,12 @@ function App() {
           <Route path="/" element={<MainPage />} />
         </Routes>
       </BrowserRouter>
+
+      <ToastContainer
+        position="bottom-right"
+        theme={effectiveTheme === 'dark' ? 'dark' : 'light'}
+        autoClose={4000}
+      />
     </div>
   );
 }

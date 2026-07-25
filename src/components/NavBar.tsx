@@ -5,7 +5,7 @@ import { useTheme } from '../hooks/useTheme';
 import { useAppStore } from '../store';
 
 const NavBar: React.FC = () => {
-  const { theme, setTheme, effectiveTheme } = useTheme();
+  const { setTheme, effectiveTheme } = useTheme();
   const { activeSection, setActiveSection, isMobileMenuOpen, toggleMobileMenu } = useAppStore();
   const [isScrolled, setIsScrolled] = useState(false);
   
